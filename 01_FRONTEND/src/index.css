@@ -1,0 +1,213 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/sora";
+@import "@fontsource-variable/manrope";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: 'Sora Variable', sans-serif;
+    --font-sans: 'Manrope Variable', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --color-ink: #30323d;
+    --color-navy: #30323d;
+    --color-taxi: #FACC15;
+    --color-taxi-deep: #EAB308;
+    --color-taxi-light: #FACC15;
+    --color-gold: #FACC15;
+    --color-leaf: #16A34A;
+    --color-leaf-deep: #15803D;
+    --color-slateink: #4d5061;
+    --color-sage: #cdd1c4;
+    --color-whatsapp: #25D366;
+    --animate-lane: lane 1.2s linear infinite;
+    --animate-float: float 6s ease-in-out infinite;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@keyframes lane {
+    from { background-position: 0 0; }
+    to { background-position: 48px 0; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Palette: taxi yellow #FACC15 (primary), green #16A34A (accents), charcoal #30323d, slate #4d5061, sage #cdd1c4 on crisp white — light by default */
+:root {
+    --background: #F6F7F3;
+    --foreground: #30323d;
+    --card: #FFFFFF;
+    --card-foreground: #30323d;
+    --popover: #FFFFFF;
+    --popover-foreground: #30323d;
+    --primary: #FACC15;
+    --primary-foreground: #111111;
+    --secondary: #EDEFE9;
+    --secondary-foreground: #30323d;
+    --muted: #EDEFE9;
+    --muted-foreground: #4d5061;
+    --accent: #FEF9C3;
+    --accent-foreground: #30323d;
+    --destructive: #DC2626;
+    --border: #cdd1c4;
+    --input: #cdd1c4;
+    --ring: #EAB308;
+    --chart-1: #FACC15;
+    --chart-2: #16A34A;
+    --chart-3: #4d5061;
+    --chart-4: #cdd1c4;
+    --chart-5: #30323d;
+    --radius: 0.75rem;
+    --sidebar: #FFFFFF;
+    --sidebar-foreground: #30323d;
+    --sidebar-primary: #FACC15;
+    --sidebar-primary-foreground: #111111;
+    --sidebar-accent: #EDEFE9;
+    --sidebar-accent-foreground: #30323d;
+    --sidebar-border: #cdd1c4;
+    --sidebar-ring: #EAB308;
+}
+
+.dark {
+    --background: #30323d;
+    --foreground: #F6F7F3;
+    --card: #3a3c48;
+    --card-foreground: #F6F7F3;
+    --popover: #3a3c48;
+    --popover-foreground: #F6F7F3;
+    --primary: #FACC15;
+    --primary-foreground: #111111;
+    --secondary: #4d5061;
+    --secondary-foreground: #F6F7F3;
+    --muted: #4d5061;
+    --muted-foreground: #cdd1c4;
+    --accent: #4d5061;
+    --accent-foreground: #F6F7F3;
+    --destructive: #F87171;
+    --border: #4d5061;
+    --input: #4d5061;
+    --ring: #EAB308;
+    --chart-1: #FACC15;
+    --chart-2: #16A34A;
+    --chart-3: #cdd1c4;
+    --chart-4: #4d5061;
+    --chart-5: #F6F7F3;
+    --sidebar: #3a3c48;
+    --sidebar-foreground: #F6F7F3;
+    --sidebar-primary: #FACC15;
+    --sidebar-primary-foreground: #111111;
+    --sidebar-accent: #4d5061;
+    --sidebar-accent-foreground: #F6F7F3;
+    --sidebar-border: #4d5061;
+    --sidebar-ring: #EAB308;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground antialiased;
+    }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    }
+  h1, h2, h3 {
+    @apply font-heading tracking-tight;
+    }
+  ::selection {
+    background: #FACC15;
+    color: #30323d;
+    }
+}
+
+@layer utilities {
+  /* stylized yellow/charcoal checkered taxi tape */
+  .checker-tape {
+    background-image: repeating-conic-gradient(#FACC15 0% 25%, #30323d 0% 50%);
+    background-size: 10px 10px;
+    }
+  /* road centre-line: yellow dashes on charcoal asphalt */
+  .lane-dash {
+    background-image: repeating-linear-gradient(90deg, #FACC15 0 28px, transparent 28px 48px);
+    }
+  .lane-dash-v {
+    background-image: repeating-linear-gradient(180deg, #FACC15 0 18px, transparent 18px 32px);
+    }
+  /* highlighter-marker underline behind key words */
+  .marker {
+    background-image: linear-gradient(transparent 62%, #FACC15 62%, #FACC15 92%, transparent 92%);
+    }
+  /* ticket perforation notches left & right */
+  .ticket-notch {
+    -webkit-mask: radial-gradient(circle 14px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle 14px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+    mask: radial-gradient(circle 14px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle 14px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+    }
+  .bg-grid-soft {
+    background-image: radial-gradient(rgba(48, 50, 61, 0.09) 1px, transparent 1px);
+    background-size: 22px 22px;
+    }
+  .shadow-taxi {
+    box-shadow: 0 10px 30px -10px rgba(250, 204, 21, 0.6);
+    }
+  .shadow-card {
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 32px -12px rgba(48, 50, 61, 0.16);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
